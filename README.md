@@ -18,7 +18,7 @@ uv add "wdl-shared @ git+https://github.com/Wetymov-Data-Lab/wdl-shared.git@main
 
 | Команда          | Назначение                             |
 |------------------|----------------------------------------|
-| `make sync`      | Установить зависимости для разработки |
+| `make sync`      | Установить зависимости для разработки  |
 | `make lint`      | Проверить код Ruff                     |
 | `make typecheck` | Проверить типы mypy                    |
 | `make test`      | Запустить тесты                        |
