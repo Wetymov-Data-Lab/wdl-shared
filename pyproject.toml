@@ -1,0 +1,34 @@
+[project]
+name = "wdl-shared"
+version = "0.1.0"
+description = "Shared project for WDL"
+readme = "README.md"
+authors = [
+    { name = "Vasin Denis", email = "wetymov.dev@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.11,<3",
+    "pydantic-settings>=2.6,<3",
+    "SQLAlchemy>=2.0.30,<3",
+    "fastapi>=0.115,<1",
+    "fastapi-another-jwt-auth>=0.1.11,<0.2",
+    "httpx>=0.28,<1",
+    "click>=8.1.8,<9",
+    "ruff>=0.15.22",
+]
+
+[project.scripts]
+wdl-shared = "wdl_shared:main"
+
+[build-system]
+requires = ["uv_build>=0.11.29,<0.12.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.22",
+]
+
+[tool.uv.sources]
+wdl-shared = { path = "../wdl-shared", editable = true }
