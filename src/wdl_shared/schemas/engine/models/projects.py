@@ -1,9 +1,12 @@
-from pydantic import BaseModel
 from uuid import UUID
-from wdl_shared.schemas.engine.enums import DataBaseName
+
+from pydantic import BaseModel
+
+from ..enums.database import DataBaseName
+
 
 class Project(BaseModel):
-    """Project validation model"""
+    """Project validation model."""
 
     id: UUID
     name: str
@@ -11,4 +14,3 @@ class Project(BaseModel):
     database_name: DataBaseName
     description: str | None
     color: str | None
-    
