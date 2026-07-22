@@ -1,4 +1,4 @@
 from .health import HealthResponse
-from .mixins import IdMixin
+from .mixins import AuditResponseMixin, IdMixin
 
-__all__ = ["HealthResponse", "IdMixin"]
+__all__ = ["AuditResponseMixin", "HealthResponse", "IdMixin"]

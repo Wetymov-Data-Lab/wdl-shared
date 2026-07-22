@@ -27,8 +27,12 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
+    "pytest>=8.3,<9",
     "ruff>=0.15.22",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
 
 [tool.uv.sources]
 wdl-shared = { path = "../wdl-shared", editable = true }
