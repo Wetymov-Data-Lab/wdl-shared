@@ -1,5 +1,3 @@
-from pydantic import BaseModel
+from wdl_shared.schemas.common.health import HealthResponse
 
-
-class HealthResponse(BaseModel):
-    status: str
+__all__ = ["HealthResponse"]
