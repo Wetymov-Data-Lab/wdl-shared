@@ -5,6 +5,7 @@ from .models import (
     IdentifierCreateModel,
     IdentifierPreferencesUpdateModel,
     IdentifierResponseModel,
+    OAuthTokenResponseModel,
     PasswordResponseModel,
     PasswordSetModel,
     ProfileCreateModel,
@@ -18,6 +19,7 @@ from .models import (
     SessionRefreshModel,
     SessionResponseModel,
     TwoFactorPolicyUpdateModel,
+    UserInfoResponseModel,
 )
 
 __all__ = [
@@ -28,6 +30,7 @@ __all__ = [
     "IdentifierCreateModel",
     "IdentifierPreferencesUpdateModel",
     "IdentifierResponseModel",
+    "OAuthTokenResponseModel",
     "PasswordResponseModel",
     "PasswordSetModel",
     "ProfileCreateModel",
@@ -41,4 +44,5 @@ __all__ = [
     "SessionRefreshModel",
     "SessionResponseModel",
     "TwoFactorPolicyUpdateModel",
+    "UserInfoResponseModel",
 ]

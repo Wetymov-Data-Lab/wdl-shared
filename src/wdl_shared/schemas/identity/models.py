@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Literal
 from uuid import UUID
 
 from pydantic import BaseModel, EmailStr, Field, SecretStr
@@ -137,3 +138,20 @@ class AccountResponseModel(BaseModel):
     second_factors: list[SecondFactorResponseModel]
     recovery_codes: list[RecoveryCodeResponseModel]
     sessions: list[SessionResponseModel]
+
+
+class OAuthTokenResponseModel(BaseModel):
+    access_token: str
+    refresh_token: str
+    token_type: Literal["bearer"] = "bearer"
+    expires_in: int = Field(gt=0)
+
+
+class UserInfoResponseModel(BaseModel):
+    sub: UUID
+    email: EmailStr | None = None
+    name: str | None = None
+    given_name: str | None = None
+    family_name: str | None = None
+    picture: str | None = None
+    locale: str | None = None
