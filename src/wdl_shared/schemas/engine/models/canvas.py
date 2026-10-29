@@ -56,3 +56,10 @@ class DiagramNoteModel(BaseModel):
     width:       float          = Field(default=240, gt=0)
     height:      float          = Field(default=160, gt=0)
     color:       str | None     = Field(default=None, pattern=r"^#[0-9A-Fa-f]{6}$")
+
+
+class DiagramHistoryModel(BaseModel):
+    """Undo/redo availability of the caller's own diagram changes."""
+
+    undo_action: str | None = Field(default=None, description="Change that undo would revert")
+    redo_action: str | None = Field(default=None, description="Change that redo would reapply")

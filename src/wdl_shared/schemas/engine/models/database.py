@@ -45,6 +45,13 @@ class DatabaseResponseModel(IdMixin, DatabaseCreateModel, AuditResponseMixin):
     """Database returned by the API."""
 
 
+class TableCheckModel(BaseModel):
+    """Table-level CHECK constraint."""
+
+    name:       str | None = Field(default=None, min_length=1, max_length=255)
+    expression: str        = Field(min_length=1, max_length=4_000)
+
+
 class TableCreateModel(BaseModel):
     """Payload used to create a table."""
 
@@ -62,6 +69,7 @@ class TableCreateModel(BaseModel):
     width:        float | None   = Field(default=None, gt=0, description="Custom table-card width")
     is_collapsed: bool           = False
     sort_order:   int            = Field(default=0, ge=0)
+    checks:       list[TableCheckModel] = Field(default_factory=list)
     author_id:    UUID           = Field(description="Identifier of the table author")
 
 
@@ -77,6 +85,7 @@ class TableUpdateModel(BaseModel):
     width:        float | None   = Field(default=None, gt=0)
     is_collapsed: bool           = False
     sort_order:   int            = Field(default=0, ge=0)
+    checks:       list[TableCheckModel] = Field(default_factory=list)
 
 
 class TableResponseModel(IdMixin, TableCreateModel, AuditResponseMixin):

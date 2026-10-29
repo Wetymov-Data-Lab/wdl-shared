@@ -4,6 +4,7 @@ from .canvas import (
     CanvasStateModel,
     CanvasViewport,
     DiagramGroupModel,
+    DiagramHistoryModel,
     DiagramNoteModel,
 )
 from .database import (
@@ -21,6 +22,7 @@ from .database import (
     RelationshipCreateModel,
     RelationshipResponseModel,
     RelationshipUpdateModel,
+    TableCheckModel,
     TableCreateModel,
     TableResponseModel,
     TableUpdateModel,
@@ -39,6 +41,7 @@ __all__ = [
     "DatabaseResponseModel",
     "DatabaseUpdateModel",
     "DiagramGroupModel",
+    "DiagramHistoryModel",
     "DiagramNoteModel",
     "EntityBase",
     "IndexColumnModel",
@@ -56,6 +59,7 @@ __all__ = [
     "RelationshipCreateModel",
     "RelationshipResponseModel",
     "RelationshipUpdateModel",
+    "TableCheckModel",
     "TableCreateModel",
     "TableResponseModel",
     "TableUpdateModel",
